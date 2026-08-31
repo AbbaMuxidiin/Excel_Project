@@ -2,13 +2,13 @@ Student Enrollment Management & Analytics Dashboard
 
 📊 Project Overview
 
-Mashruucan waa Student Enrollment Management & Analytics Dashboard
-oo lagu falanqeeyay xog ardayeed iyadoo la adeegsanayo Microsoft
-Excel.
+This project is a Student Enrollment Management & Analytics Dashboard developed in Microsoft Excel.
 
-Ujeeddada mashruucu waa in xogta enrollment-ka laga sameeyo:
+The project focuses on analyzing student enrollment data and transforming raw data into meaningful insights using:
 
-Data Cleaning iyo Data Quality Analysis
+Data Cleaning
+
+Data Quality Analysis
 
 Pivot Tables
 
@@ -18,54 +18,71 @@ KPIs
 
 Interactive Slicers
 
-Enrollment Dashboard
+Dashboard Design
 
-Tuition iyo enrollment analysis
+Tuition and Enrollment Analysis
 
-Mashruucu wuxuu isku daraa xogta ardayda, enrollment status, study mode,
-program, gender, enrollment date iyo tuition fee si loo helo warbixin si
-fudud loo fahmi karo.
+The dashboard provides a clear overview of student enrollment, enrollment status, study mode, gender, academic programs, enrollment dates, and tuition fees.
 
 🎯 Project Objectives
 
-Mashruucan waxaa looga gol leeyahay:
+The main objectives of this project are to:
 
-In la ogaado tirada guud ee ardayda.
+Identify the total number of students.
 
-In la falanqeeyo Enrollment Status.
+Analyze student enrollment status.
 
-In la barbar dhigo Gender.
+Compare students by gender.
 
-In la fahmo Study Mode ee ardayda.
+Analyze different study modes.
 
-In la ogaado barnaamijyada ardaydu ugu badan yihiin.
+Identify student distribution across academic programs.
 
-In la falanqeeyo Tuition Fee ee program kasta.
+Analyze tuition fees by program.
 
-In la eego enrollment-ka iyadoo loo eegayo taariikhda.
+Analyze enrollment trends by date.
 
-In la ogaado khaladaadka iyo missing values-ka xogta.
+Identify missing, duplicate, invalid, and inconsistent data.
 
-In xogta loogu beddelo dashboard interactive ah.
+Build an interactive Excel dashboard for decision-making.
 
-🧹 Data Cleaning & Data Quality
+🧹 Data Cleaning & Data Quality Analysis
 
-Qaybta analysis-ka waxaa lagu ogaaday in dataset-ku leeyahay qaar ka mid
-ah xog aan sax ahayn ama maqan.
+The data analysis identified several data-quality issues that should be addressed before the final analysis.
 
 Gender
 
-Gender          Count
+Gender
 
-Male              148
-Female            136
-Blank              15
-Non-value           1
-Total     300
+Count
+
+Male
+
+148
+
+Female
+
+136
+
+Blank
+
+15
+
+Non-value
+
+1
+
+Total
+
+300
+
+There are blank and invalid gender values that should be reviewed during the data-cleaning stage.
 
 Program Data Quality
 
-Waxaa jira values u baahan standardization ama sixid, sida:
+The dataset contains both standardized program names and inconsistent values.
+
+Examples of inconsistent values include:
 
 BA
 
@@ -79,7 +96,7 @@ blank
 
 non_program
 
-Waxaa sidoo kale muuqda values sax ah sida:
+Standard program names include:
 
 Business Administration
 
@@ -93,9 +110,19 @@ Engineering
 
 Public Health
 
-Study Mode
+Recommended cleaning:
 
-Study Mode-ka waxaa ka muuqda values kala duwan:
+BA → Business Administration
+
+CS → Computer Science
+
+Review NULL, Unknown, and blank values.
+
+Review non_program and determine whether it should remain as a category or be treated as missing data.
+
+Study Mode Data Quality
+
+The Study Mode field contains:
 
 Full-Time
 
@@ -111,12 +138,39 @@ Blank
 
 non_stady_mode
 
-non_stady_mode waa value u baahan in la standardize gareeyo ama loo
-beddelo category sax ah.
+The value non_stady_mode appears to be an inconsistent or misspelled category and should be reviewed.
 
-Enrollment Status
+Study Mode Summary
 
-Enrollment Status-ka waxaa jira:
+Study Mode
+
+Students
+
+Full-Time
+
+162
+
+Part-Time
+
+59
+
+Online
+
+60
+
+non_stady_mode
+
+19
+
+Total
+
+300
+
+Key Insight: Full-Time students represent the largest study-mode category.
+
+Enrollment Status Data Quality
+
+The Enrollment Status field contains:
 
 Active
 
@@ -132,51 +186,69 @@ Blank
 
 non_status
 
-Waxaa muhiim ah in values-ka khaldan ama maqan la nadiifiyo ka hor
-analysis-ka ugu dambeeya.
+The inconsistent and missing values should be standardized before final reporting.
 
 Duplicate Student IDs
 
-Analysis-ka wuxuu muujiyay in qaar ka mid ah Student_ID ay soo
-noqnoqdaan. Tusaale ahaan waxaa jira Student IDs leh count 2, taas
-oo u baahan in la hubiyo haddii ay yihiin duplicate dhab ah ama records
-sax ah.
+The analysis identified several Student IDs appearing more than once.
+
+Examples include Student IDs with a count of 2.
+
+These records should be reviewed to determine whether they are:
+
+Genuine duplicate records, or
+
+Valid multiple enrollment records for the same student.
 
 Missing Student IDs
 
-Waxaa sidoo kale jira records leh Student_ID ka maqan. Sidaa darteed
-Student_ID waa field muhiim ah oo loo baahan yahay in la hubiyo.
+Some records have missing Student IDs.
+
+Because Student_ID is an important identifier, missing values should be reviewed and corrected where possible.
 
 📌 Pivot Tables & Analysis
 
 1. Enrollment Status
 
-Pivot Table-ka Enrollment Status wuxuu muujiyay:
+The Enrollment Status Pivot Table shows:
 
-Enrollment Status            Students
+Enrollment Status
 
-Active                            175
-Deferred                           27
-Graduated                          64
-Withdrawn                          16
-Total shown in pivot      282
+Students
 
-Chart-ka waxaa loo adeegsaday in si muuqata loo barbar dhigo status-yada
-ardayda.
+Active
 
-Insight: Active students ayaa ah kooxda ugu badan, halka Deferred
-iyo Withdrawn ay yihiin kooxaha ugu yar.
+175
 
-Fiiro gaar ah: dataset-ka guud wuxuu leeyahay 300 records, laakiin
-pivot-kan wuxuu tirinayaa Tuition_Fee, sidaas darteed total-ku waa
-282. Records-ka Tuition_Fee ka maqan laguma darin count-kan.
+Deferred
 
-2. Enrollment Date
+27
 
-Enrollment Date analysis-ka waxaa lagu sameeyay Pivot Table iyo Line
-Chart.
+Graduated
 
-Waxaa lagu arkay counts kala duwan oo ay ka mid yihiin:
+64
+
+Withdrawn
+
+16
+
+Total shown in Pivot
+
+282
+
+A Pivot Chart was created to visualize the enrollment-status distribution.
+
+Key Insight
+
+Active students represent the largest group, while Deferred and Withdrawn represent smaller groups.
+
+Note: The overall dataset contains 300 records, but this Pivot Table counts Tuition_Fee. Therefore, the Pivot Total is 282 because records with missing Tuition_Fee values are excluded from this count.
+
+2. Enrollment Date Analysis
+
+Enrollment Date was analyzed using a Pivot Table and Line Chart.
+
+The chart shows enrollment counts including:
 
 18
 
@@ -198,116 +270,207 @@ Waxaa lagu arkay counts kala duwan oo ay ka mid yihiin:
 
 30
 
-Waxaa jira #VALUE! oo ka muuqda date grouping-ka, taasoo tilmaamaysa
-in qaar ka mid ah Enrollment Date values aysan ahayn dates sax ah ama ay
-leeyihiin data-type problem.
+However, #VALUE! appears in the Pivot Table/chart.
+
+Enrollment Date Issue
+
+The #VALUE! indicates that some Enrollment Date values may not be stored as valid Excel dates.
 
 Recommended Fix
 
-Enrollment Date waa in:
+Check all Enrollment Date values.
 
-La hubiyaa in dhammaan values-ku yihiin Excel Date.
+Identify invalid or text-based dates.
 
-#VALUE! iyo invalid dates la saxo.
+Convert valid values to Excel Date format.
 
-Column-ka loo format-gareeyo Date.
+Correct or remove invalid dates.
 
-Kadib Pivot Table-ka lagu sameeyo Group by Months/Years.
+Refresh the Pivot Table.
+
+Group the dates by Month and/or Year.
 
 3. Study Mode
 
-Pivot Table-ka Study Mode:
+The Study Mode Pivot Table contains:
 
-Study Mode         Students
+Study Mode
 
-Full-Time               162
-Part-Time                59
-Online                   60
-non_stady_mode           19
-Total           300
+Students
 
-Pie Chart-ka wuxuu muujinayaa distribution-ka Study Mode.
+Full-Time
 
-Insight: Full-Time ayaa leh tirada ugu badan ee ardayda, halka
-non_stady_mode uu yahay category u baahan cleaning.
+162
 
-4. Tuition by Program
+Part-Time
 
-Tuition-ka waxaa lagu falanqeeyay Program kasta:
+59
 
-Program                              Tuition
+Online
 
-Business Administration          $36,617.50
-Computer Science                 $68,526.92
-Data Science                     $65,662.73
-Economics                        $19,402.25
-Engineering                      $42,936.93
-non_program                      $17,318.41
-Public Health                    $30,457.95
-Total                   $280,922.69
+60
+
+non_stady_mode
+
+19
+
+Total
+
+300
+
+A Pie Chart was created to visualize the Study Mode distribution.
 
 Key Insight
 
-Computer Science ayaa leh tuition-ka ugu sarreeya, waxaana ku xiga
-Data Science.
+Full-Time is the most common study mode, followed by Online and Part-Time.
 
-📈 Dashboard
+The non_stady_mode category should be reviewed during data cleaning.
 
-Dashboard-ka wuxuu isku daraa KPIs, charts iyo slicers si user-ku si
-interactive ah ugu falanqeeyo xogta.
+4. Tuition by Program
 
-Main KPIs
+Tuition was analyzed by academic program.
 
-Dashboard-ka waxaa loogu talagalay inuu muujiyo:
+Program
 
-KPI                           Value
+Tuition
 
-Total Students                  300
-Active Students                 175
-Graduated Students               64
-Total Tuition          $280,922.69
-Average Tuition            $996.18
+Business Administration
 
-⚠️ KPI Correction
+$36,617.50
 
-Sawirka dashboard-ka waxaa ka muuqda Total Tuition oo lagu qoray
-$996.18. Taasi waxay u muuqataa in formula-ga KPI-ga Total Tuition
-uu si khaldan u isticmaalayo Average.
+Computer Science
 
-Qiimaha saxda ah ee Total Tuition waa:
+$68,526.92
+
+Data Science
+
+$65,662.73
+
+Economics
+
+$19,402.25
+
+Engineering
+
+$42,936.93
+
+non_program
+
+$17,318.41
+
+Public Health
+
+$30,457.95
+
+Total
 
 $280,922.69
 
-Average Tuition-na waa:
+Key Insights
+
+Computer Science has the highest total tuition at $68,526.92.
+
+Data Science has the second-highest total tuition at $65,662.73.
+
+Economics has the lowest tuition among the named standard programs.
+
+The total tuition shown in the Pivot Table is $280,922.69.
+
+📈 Dashboard
+
+The final dashboard combines KPIs, charts, and interactive slicers.
+
+Main KPIs
+
+The dashboard includes the following key metrics:
+
+KPI
+
+Value
+
+Total Students
+
+300
+
+Active Students
+
+175
+
+Graduated Students
+
+64
+
+Total Tuition
+
+$280,922.69
+
+Average Tuition
 
 $996.18
 
-Average-kan wuxuu ku salaysan yahay 282 records oo leh Tuition_Fee:
+⚠️ KPI Correction
 
-$280,922.69 ÷ 282 ≈ $996.18
+The dashboard screenshot shows $996.18 under both Total Tuition and Average Tuition.
 
-Sidaas darteed labada KPI waa in loo kala saaraa:
+This is incorrect.
 
-Total Tuition → $280,922.69
+The correct values are:
 
-Average Tuition → $996.18
+Total Tuition
+
+$280,922.69
+
+Average Tuition
+
+$996.18
+
+The Average Tuition is approximately:
+
+$280,922.69 ÷ 282 = $996.18
+
+Therefore, the dashboard should display:
+
+KPI
+
+Correct Value
+
+Total Tuition
+
+$280,922.69
+
+Average Tuition
+
+$996.18
 
 📊 Dashboard Charts
 
-Dashboard-ka waxaa ku jira charts muhiim ah:
+The dashboard contains several important charts.
 
 1. Total Gender
 
-Waxa uu muujinayaa tirada ardayda Male iyo Female, iyadoo sidoo kale
-data quality-ga lagu arkayo blank/non-value records.
+A column chart showing the number of students by gender.
+
+It includes:
+
+Female
+
+Male
+
+non_gender
+
+The chart helps compare the gender distribution.
 
 2. Tuition by Program
 
-Horizontal Bar Chart ayaa lagu muujiyay tuition-ka program kasta.
+A horizontal bar chart showing total tuition for each academic program.
+
+The chart makes it easy to identify programs generating the highest tuition.
+
+Computer Science and Data Science have the highest tuition totals.
 
 3. Total Enrollment Status
 
-Waxa uu muujinayaa:
+A horizontal bar chart showing student counts by enrollment status:
 
 Active
 
@@ -319,9 +482,11 @@ Withdrawn
 
 non_status
 
+This chart provides a quick overview of the current student status distribution.
+
 4. Total Study Mode
 
-Waxa uu muujinayaa:
+A horizontal bar chart showing students by study mode:
 
 Full-Time
 
@@ -331,77 +496,77 @@ Online
 
 non_stady_mode
 
+The chart clearly shows that Full-Time is the largest category.
+
 5. Enrollment Date
 
-Line Chart ayaa loo adeegsaday in lagu muujiyo enrollment-ka iyadoo loo
-eegayo date/month.
+A line chart is used to visualize enrollment counts over time.
+
+The chart can be improved by correcting the #VALUE! issue and grouping dates by Month/Year.
 
 🎛️ Interactive Slicers
 
-Dashboard-ka waxaa lagu daray Slicers si user-ku u filter-gareyn karo
-dashboard-ka.
+The dashboard includes interactive slicers that allow users to filter the dashboard.
 
-Slicers-ka waxaa ka mid ah:
+The slicers include:
 
 Gender
 
-Study_Mode
+Study Mode
 
 Program
 
-Enrollment_Status
+Enrollment Status
 
-Enrollment_Date
+Enrollment Date
 
-Slicers-ku waxay dashboard-ka ka dhigayaan interactive, waxaana user-ku
-dooran karaa category gaar ah si charts-ka iyo analysis-ku ula socdaan
-filter-ka.
+When a user selects a value from a slicer, the connected Pivot Tables and Pivot Charts update accordingly.
+
+This makes the dashboard interactive and useful for exploring different student groups.
 
 🔍 Key Findings
 
-Waxaa laga helay analysis-ka:
+The analysis produced the following findings:
 
-Total records = 300 students.
+The dataset contains 300 student records.
 
-Active = 175, waana enrollment status-ka ugu badan.
+Active students = 175, making Active the largest enrollment-status group.
 
-Graduated = 64.
+Graduated students = 64.
 
-Deferred = 27.
+Deferred students = 27.
 
-Withdrawn = 16.
+Withdrawn students = 16.
 
-Full-Time = 162, waana Study Mode-ka ugu badan.
+Full-Time students = 162, making Full-Time the largest study mode.
 
-Online = 60.
+Online students = 60.
 
-Part-Time = 59.
+Part-Time students = 59.
 
-Computer Science ayaa leh tuition-ka ugu badan, qiyaastii
-$68.5K.
+Computer Science has the highest total tuition at $68,526.92.
 
-Data Science ayaa ku xigta, qiyaastii $65.7K.
+Data Science has the second-highest total tuition at $65,662.73.
 
-Total Tuition-ka la muujiyay waa $280,922.69.
+Total Tuition is $280,922.69.
 
-Average Tuition-ka records-ka Tuition_Fee leh waa qiyaastii
-$996.18.
+Average Tuition is approximately $996.18 based on 282 records containing Tuition_Fee.
 
-Dataset-ka waxaa ku jira missing values, invalid values, duplicates
-iyo inconsistent categories.
+The dataset contains missing values, invalid values, duplicate Student IDs, and inconsistent categories.
 
-Enrollment Date column-ka waxaa ka muuqda #VALUE!, sidaas darteed
-date cleaning ayaa loo baahan yahay.
+The Enrollment Date analysis contains a #VALUE! issue that should be corrected before final reporting.
 
-🛠️ Excel Skills Used
+🛠️ Excel Skills Demonstrated
 
-Mashruucan wuxuu ku tababarayaa xirfadaha Excel ee muhiimka ah:
+This project demonstrates practical Excel data-analysis skills, including:
 
 Data Cleaning
 
-Remove Duplicates
+Handling Missing Values
 
-Handling Blank Values
+Removing Duplicates
+
+Data Standardization
 
 Data Validation
 
@@ -433,7 +598,7 @@ Data Quality Analysis
 
 📁 Suggested Workbook Structure
 
-Workbook-ka waxaa lagu habeyn karaa sidan:
+The Excel workbook can be organized as follows:
 
 Student_Enrollment_Project.xlsx
 │
@@ -446,49 +611,55 @@ Student_Enrollment_Project.xlsx
 
 Raw_Data
 
-Xogta asalka ah.
+Contains the original dataset before cleaning.
 
 Data_Clean
 
-Xogta la nadiifiyay oo loo diyaariyay analysis.
+Contains the cleaned and standardized dataset.
 
 Pivot_Tables
 
-Pivot tables-ka kala duwan.
+Contains the Pivot Tables used for analysis.
 
 Pivot_Charts
 
-Charts-ka laga sameeyay Pivot Tables.
+Contains charts created from Pivot Tables.
 
 Analysis
 
-Data quality checks, duplicates, missing values iyo error checks.
+Contains data-quality checks, duplicate checks, missing-value analysis, and error checks.
 
 Dashboard
 
-Final interactive dashboard-ka.
+Contains the final interactive dashboard with KPIs, charts, and slicers.
 
 🚀 Recommended Improvements
 
-Si mashruucu u noqdo mid professional ah:
+To make the project more professional and reliable:
 
-Sax Total Tuition KPI-ga.
+Correct the Total Tuition KPI to $280,922.69.
 
-Nadiifi #VALUE! ee Enrollment Date.
+Keep Average Tuition at $996.18.
 
-Standardize BA → Business Administration.
+Fix the #VALUE! issue in Enrollment Date.
 
-Standardize CS → Computer Science.
+Standardize BA to Business Administration.
 
-Hubi NULL, Unknown, blank iyo non-values.
+Standardize CS to Computer Science.
 
-Sax non_stady_mode haddii ay tahay typo.
+Review NULL, Unknown, and blank values.
 
-Hubi duplicate Student IDs.
+Review non_stady_mode.
 
-Samee Year/Month columns haddii date analysis loo baahan yahay.
+Review non_status.
 
-Ku dar percentage KPIs sida:
+Check duplicate Student IDs.
+
+Investigate missing Student IDs.
+
+Create Year and Month fields for better date analysis.
+
+Add percentage KPIs such as:
 
 Active Rate
 
@@ -496,27 +667,26 @@ Graduation Rate
 
 Withdrawal Rate
 
-Dashboard-ka ka dhig mid si buuxda ugu xiran Pivot Tables iyo
-Slicers.
+Ensure all Pivot Tables and Pivot Charts are connected to the appropriate Slicers.
+
+Refresh all Pivot Tables after data cleaning.
 
 🏁 Conclusion
 
-Mashruucani waa Student Enrollment Analytics Dashboard oo lagu
-isticmaalo Excel si loo fahmo enrollment-ka ardayda, study mode, gender,
-programs, enrollment status iyo tuition revenue.
+This project is a Student Enrollment Management & Analytics Dashboard built in Microsoft Excel.
 
-Waxa ugu muhiimsan ee mashruucu muujinayo waa in data cleaning uu
-yahay tallaabo muhiim ah ka hor inta aan la sameyn Pivot Tables iyo
-Dashboard. Marka values-ka khaldan, blanks, duplicates iyo date errors
-la saxo, dashboard-ku wuxuu bixin karaa analysis ka sax badan oo loogu
-adeegsan karo go'aan qaadashada maamulka waxbarashada.
+It demonstrates how raw student data can be cleaned, analyzed, and transformed into meaningful business and academic insights using Pivot Tables, Pivot Charts, KPIs, and interactive Slicers.
 
-👨‍💻 Project Type
+The project highlights important enrollment metrics such as student count, enrollment status, study mode, gender, program distribution, tuition revenue, and enrollment trends.
 
-Microsoft Excel -- Data Cleaning, Pivot Tables, Pivot Charts &
-Dashboard
+The analysis also demonstrates the importance of data cleaning and data quality before building a final dashboard. Correcting missing values, duplicate records, inconsistent categories, and invalid dates will make the final analysis more accurate and reliable.
 
-Topic: Student Enrollment Management & Analytics
+👨‍💻 Project Information
 
-Status: Dashboard Completed --- Data Quality Improvements
-Recommended
+Project Type: Microsoft Excel Data Analytics Project
+
+Project Topic: Student Enrollment Management & Analytics
+
+Main Tools: Microsoft Excel, Pivot Tables, Pivot Charts, Slicers, KPIs
+
+Project Status: Dashboard Completed — Data Quality Improvements Recommended
